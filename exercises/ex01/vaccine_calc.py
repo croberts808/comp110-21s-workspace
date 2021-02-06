@@ -40,4 +40,4 @@ date_will_fall_on: datetime = today + days
 
 # Output
 print("We will reach " + str(target_percent_vaccinated) + "% vaccination in " + str(days_it_will_take)
- + " days, which falls on " + str(date_will_fall_on.strftime("%B, %d, %Y") + ".") )
+    + " days, which falls on " + str(date_will_fall_on.strftime("%B %d , %Y") + "."))
