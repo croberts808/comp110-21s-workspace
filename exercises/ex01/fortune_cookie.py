@@ -13,7 +13,7 @@ from random import randint
 
 
 # Begin your solution here...
-fortune_cookie: int = randint(1,4)
+fortune_cookie: int = randint(1, 4)
 print("Your fortune cookie says...")
 if fortune_cookie == 1:
     print("You will get an A on your next assignment")

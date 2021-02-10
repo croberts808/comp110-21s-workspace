@@ -22,22 +22,24 @@ from datetime import timedelta
 population: int = int(input("Population: "))
 doses_administered: int = int(input("Doses administered: "))
 doses_per_day: int = int(input("Doses per day: "))
-target_percent_vaccinated: int = int(input("Target percent vaccinated: "))
+target: int = int(input("Target percent vaccinated: "))
 
 
 # Definitions for calculation
-people_already_vaccinated: float = doses_administered /2
-people_we_want_vaccinated: int = round((target_percent_vaccinated /100) * population)
+people_already_vaccinated: float = doses_administered / 2
+people_we_want_vaccinated: int = round((target / 100) * population)
 people_need_to_vaccinate: float = people_we_want_vaccinated - people_already_vaccinated
-how_many_vaccinate_day: float = doses_per_day /2
+how_many_vaccinate_day: int = round(doses_per_day / 2)
 days_it_will_take: int = round(people_need_to_vaccinate / how_many_vaccinate_day)  
 # This is for printing in the string concatenation
 days: timedelta = timedelta(days_it_will_take)  
 # This is for calculating date_will_fall_on using correct format
 today: datetime = datetime.today()
-date_will_fall_on: datetime = today + days 
+total_date: datetime = today + days 
 
 
 # Output
-print("We will reach " + str(target_percent_vaccinated) + "% vaccination in " + str(days_it_will_take)
-    + " days, which falls on " + str(date_will_fall_on.strftime("%B %d , %Y") + "."))
+print(
+    "We will reach " + str(target) + "% vaccination in " + str(days_it_will_take),
+    "days, which falls on " + str(total_date.strftime("%B %d, %Y") + ".")
+)
